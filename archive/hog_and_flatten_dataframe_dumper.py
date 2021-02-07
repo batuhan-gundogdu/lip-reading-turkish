@@ -28,8 +28,8 @@ import pandas as pd
 #%capture
 
 hog_set=[]
-
-dataset_dir = "frames"
+PROJECT_PATH = "C:\\Users\\benan\\OneDrive\\07_DOKTORA\\PAPERLAR\\PAPER_NO_03\\github\\"
+dataset_dir = PROJECT_PATH +"frames"
 
 terms = os.listdir(dataset_dir)
 print(len(terms))
@@ -50,10 +50,10 @@ for term in terms:
             hog_set.append(fd)
 hog_set[0].shape
 df_hog = pd.DataFrame(hog_set)
-df_hog.to_csv("hog_dataframe.csv")
+joblib.dump(df_hog,"hog_dataframe2.pkl")
 #%%
-df = pd.DataFrame(flt_img_list)
-df.to_csv("flatten_dataframe.csv")
+df_flatten = pd.DataFrame(flt_img_list)
+joblib.dump(df_flatten,"flatten_dataframe2.pkl")
 #%%
 
 
